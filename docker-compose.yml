@@ -1,0 +1,19 @@
+services:
+  gasfles_detectie:
+    image: trainset2
+    volumes:
+    - ./docker_output/images/:/app/data/detected_gasfles/
+    - ./docker_output/csv/:/app/csv/
+    - ./docker_output/false_negatives/:/app/data/false_negatives_potentially/
+    - ./docker_output/false_positives/:/app/data/false_positives_potentially/
+    - ./process_stream.py:/app/process_stream.py
+    environment:
+    - STREAM_PATH=rtsp://user:Vrijdag2023!@192.168.28.137/24
+    # - STREAM_PATH=24-03-23-20m-22m_video.mp4
+    - INPUT_TYPE=stream
+    command:
+    - poetry
+    - run
+    - python
+    - -u
+    - process_stream.py

@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "gasfles"
+version = "0.1.0"
+description = "Project to detect and count gasflessen from videostream"
+authors = ["maxdruyv <100124130+maxdruyv@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "10.3.0"
+transformers = "4.41.1"
+python-dotenv = "^1.0.1"
+torch = [
+  { markers = "sys_platform == 'darwin'", version = "2.2.2", source = "pypi"},
+  { markers = "sys_platform == 'linux'", version = "2.2.2+cpu", source = "pytorch-cpu-src"},
+]
+torchvision = [
+  { markers = "sys_platform == 'darwin'", version = "0.17.2", source = "pypi"},
+  { markers = "sys_platform == 'linux'", version = "0.17.2+cpu", source = "pytorch-cpu-src"},
+]
+opencv-python = "^4.9.0.80"
+
+[[tool.poetry.source]]
+name = "pytorch-cpu-src"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
