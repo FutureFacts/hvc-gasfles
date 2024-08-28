@@ -1,9 +1,11 @@
 ## Locations and Files
-/notebooks contains several jupyter notebooks with data processing and model training. It might be easier to train in a different shell as the pandas package versions required for transformer training can clash with the packages required for the docker image that needs to run in the server environment. 
+- _/notebooks_ contains several jupyter notebooks with data processing and model training. It might be easier to train in a different shell as the pandas package versions required for transformer training can clash with the packages required for the docker image that needs to run in the server environment.
 
-process_stream.py is the main script where the model is invoked on the frames of the videostream for detection. Detections are recorded in a csv file and the detection frames are stored in /docker_output. The script sends an email through SMTP to HVC members that are interested every day with the count of that day. 
+After getting the performance you want on the testset with your model, you can use the checkpoint of the model for inference on the videostream with the scripts below.
 
-process_stream_only.py is for local testing, which does not contain any email sending. 
+- _process_stream.py_ is the main script where the model is invoked on the frames of the videostream for detection. Detections are recorded in a csv file and the detection frames are stored in /docker_output. The script sends an email through SMTP to HVC members that are interested every day with the count of that day. 
+
+- _process_stream_only.py_ is for local testing, which does not contain any email sending. 
 
 in the .env file you can store environment variables such as the stream path and videotype. 
 
