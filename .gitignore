@@ -1,0 +1,17 @@
+detected_gasfles/*
+false_negatives_potentially/*
+false_positives_potentially/*
+docker_output/
+trainset2/
+.env
+csv/
+data/
+vit-gasfles5/checkpoint*
+vit-gasfles5/false_negatives*
+vit-gasfles5/false_positives*
+vit-gasfles/runs/*
+archive
+.DS_Store
+**/.venv
+**/.vscode
+*.tar.gz
