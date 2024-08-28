@@ -1,0 +1,12 @@
+detected_gasfles/
+false_positives_potentially/
+false_negatives_potentially/
+archive/
+.vscode/
+.venv/
+docker_output/*
+*.tar.gz
+.env
+data/
+.ipynb_checkpoints/
+# *.mp4
