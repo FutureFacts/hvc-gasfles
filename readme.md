@@ -12,7 +12,7 @@ After getting the performance you want on the testset with your model, you can u
 in the .env file you can store environment variables such as the stream path and videotype. 
 
 
-## Process
+## Process of deployment on HVC server
 1. build the docker image with
 
 `docker build -t <image-name> --platform=linux/amd64 .`
