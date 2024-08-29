@@ -18,7 +18,7 @@ import time
 
 load_dotenv(override=True)
 
-model_name_or_path = "myvitprocessor"
+model_name_or_path = "models/myvitprocessor"
 processor = ViTImageProcessor.from_pretrained(model_name_or_path)
 
 # Define the directory to save "gasfles" images
@@ -31,7 +31,7 @@ os.makedirs(false_pos_dir, exist_ok=True)
 
 # Load the model using the `from_pretrained()` method
 model = ViTForImageClassification.from_pretrained(
-    "checkpoint-220")
+    "models/checkpoint-220")
 
 
 def get_timestamp(frame_count, fps):
@@ -115,7 +115,7 @@ def compose_email(day):
 def job():
     today = datetime.today()
     yesterday = (today - timedelta(days=1)).strftime('%Y-%m-%d')
-    print(f"Running send_email job at {datetime.now(datetime.UTC)}")
+    print(f"Running send_email job at {datetime.now()}")
     compose_email(yesterday)
     print("email sent succesfully")
 
@@ -180,8 +180,8 @@ def process_videostream(video_source, is_stream=True):
             predictions_window.append(predicted)
             frames_window.append(frame)
             framecount_window.append(frame_count)
-            date = datetime.now(datetime.UTC).strftime('%Y-%m-%d')
-            timeformat = datetime.now(datetime.UTC).strftime('%H:%M:%S')
+            date = datetime.now().strftime('%Y-%m-%d')
+            timeformat = datetime.now().strftime('%H:%M:%S')
             if len(predictions_window) == 6 * frame_interval // prediction_interval:
                 count_of_ones = sum(predictions_window)
 

@@ -6,6 +6,7 @@ trainset2/
 .env
 csv/
 data/
+models/
 vit-gasfles5/checkpoint*
 vit-gasfles5/false_negatives*
 vit-gasfles5/false_positives*
