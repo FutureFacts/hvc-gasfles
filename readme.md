@@ -1,3 +1,9 @@
+# Gasflessencilinder telling HVC
+This project contains the code for the application to detect and count the gasflessen in a videostream of a slakkenband. It uses a Vision Transformer trained on a custom dataset of frames of the videostream. It also has an automated smtp setup so that the counts and timestamps of the detected gasflessen are reported to the end user. 
+
+#Usage
+
+
 ## Locations and Files
 - _/notebooks_ contains several jupyter notebooks with data processing and model training.
 
@@ -35,3 +41,6 @@ to load the docker image.
 
 * For easy changes, the docker-compose file mounts the python scripts, so that you can easily change things in this script without needing to build a new image. Simply do `docker compose down`, save your changes in the python scripts and run docker compose up again. 
 
+
+## Contributors
+Max Druyvesteyn (some help from Niels Backer)
